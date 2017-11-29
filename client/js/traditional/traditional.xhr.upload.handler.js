@@ -86,7 +86,7 @@ qq.traditional.XhrUploadHandler = function(spec, proxy) {
             log("xhr - server response received for " + id);
             log("responseText = " + xhr.responseText);
 
-            response = parseResponse(true, xhr);
+            response = {success: true};
 
             return {
                 success: !isErrorUploadResponse(xhr, response),
@@ -176,7 +176,6 @@ qq.traditional.XhrUploadHandler = function(spec, proxy) {
             xhr.setRequestHeader("Cache-Control", "no-cache");
 
             if (!multipart) {
-                xhr.setRequestHeader("Content-Type", "application/octet-stream");
                 //NOTE: return mime type in xhr works on chrome 16.0.9 firefox 11.0a2
                 xhr.setRequestHeader("X-Mime-Type", fileOrBlob.type);
             }
