@@ -10,7 +10,6 @@
 !.jshintignore
 Thumbs.db
 
-_build/
 _dist/
 *.zip
 release/*
